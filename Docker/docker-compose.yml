@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nginx: 
+    image: patello.se:latest
+    container_name: patello.se
+    volumes:
+      -  ~/projects/patello.se/content:/usr/share/nginx/html
+    ports:
+      - 80:80
