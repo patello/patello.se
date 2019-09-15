@@ -8,11 +8,3 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
-  authentication-playground: 
-    image: nginx:latest
-    container_name: authentication-playground
-    volumes:
-      - ../../authentication-playground/content:/usr/share/nginx/html
-      - ../../authentication-playground/Docker/nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - 8080:8080  
