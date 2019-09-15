@@ -1,9 +1,18 @@
 version: '3'
 services:
-  nginx: 
-    image: patello.se:latest
+  patello.se: 
+    image: nginx:latest
     container_name: patello.se
     volumes:
-      -  ~/projects/patello.se/content:/usr/share/nginx/html
+      - ../content:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
+  authentication-playground: 
+    image: nginx:latest
+    container_name: authentication-playground
+    volumes:
+      - ../../authentication-playground/content:/usr/share/nginx/html
+      - ../../authentication-playground/Docker/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 8080:8080  
